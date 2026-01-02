@@ -1,0 +1,19 @@
+# Database
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=ita_city
+DB_USER=postgres
+DB_PASSWORD=your_password
+
+# Maps API Keys
+GOOGLE_MAPS_API_KEY=your_key
+NESHAN_API_KEY=your_key
+BALAD_API_KEY=your_key
+
+# Security
+JWT_SECRET=your_jwt_secret
+ENCRYPTION_KEY=your_encryption_key
+
+# Server
+PORT=3000
+NODE_ENV=development
