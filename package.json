@@ -1,0 +1,97 @@
+{
+  "name": "ita-city",
+  "version": "1.0.0",
+  "description": "Intelligent Urban Development Platform with iTA v2 Algorithm",
+  "main": "src/backend/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node src/backend/server.js",
+    "client": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "test:integration": "jest --testPathPattern=integration",
+    "test:e2e": "cypress run",
+    "test:performance": "artillery run config/performance.yml",
+    "test:user": "node src/tests/user-test.js",
+    "test:report": "jest --coverage",
+    "db:init": "node src/backend/db/init.js",
+    "db:migrate": "node src/backend/db/migrations.js",
+    "db:seed": "node src/backend/db/seed.js",
+    "city:init": "node src/utils/city-init.js",
+    "metrics": "node src/utils/metrics.js",
+    "report:performance": "node src/utils/performance-report.js",
+    "health:check": "node src/utils/health-check.js",
+    "lint": "eslint src/",
+    "format": "prettier --write \"src/**/*.{js,jsx,json}\"",
+    "deploy:prod": "npm run build && pm2 start ecosystem.config.js --env production",
+    "deploy:dev": "npm run build && pm2 start ecosystem.config.js --env development"
+  },
+  "keywords": [
+    "urban-development",
+    "smart-city",
+    "iran",
+    "mashhad",
+    "ita-algorithm",
+    "citizen-engagement",
+    "gamification"
+  ],
+  "author": "Hossein Ahmadi <hossein@ita-city.ir>",
+  "contributors": [
+    "Mashhad Municipality",
+    "Iran Urban Development Institute"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "axios": "^1.3.4",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0",
+    "crypto-js": "^4.1.1",
+    "pg": "^8.9.0",
+    "postgis": "^0.4.0",
+    "redis": "^4.6.5",
+    "sequelize": "^6.29.0",
+    "leaflet": "^1.9.3",
+    "react-leaflet": "^4.2.0",
+    "socket.io": "^4.5.4",
+    "express-validator": "^6.15.0",
+    "helmet": "^7.0.0",
+    "cors": "^2.8.5",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0",
+    "winston": "^3.8.2",
+    "joi": "^17.8.3",
+    "dayjs": "^1.11.7",
+    "lodash": "^4.17.21",
+    "nodemailer": "^6.9.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "jest": "^29.4.3",
+    "supertest": "^6.3.3",
+    "cypress": "^12.6.0",
+    "eslint": "^8.35.0",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.4",
+    "nodemon": "^2.0.20",
+    "artillery": "^2.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^5.16.5"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/ita-city.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ita-city/issues"
+  },
+  "homepage": "https://ita-city.ir"
+}
