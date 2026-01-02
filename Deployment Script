@@ -1,0 +1,33 @@
+#!/bin/bash
+# deployment/deploy.sh
+
+echo "🚀 Starting iTA-City Deployment..."
+
+# Check environment
+if [ -z "$NODE_ENV" ]; then
+    export NODE_ENV=production
+fi
+
+echo "📦 Environment: $NODE_ENV"
+
+# Install dependencies
+echo "📥 Installing dependencies..."
+npm ci --only=production
+
+# Run database migrations
+echo "🔄 Running database migrations..."
+npm run db:migrate
+
+# Seed initial data for Mashhad
+echo "🌱 Seeding initial data for Mashhad..."
+npm run db:seed -- --city=mashhad
+
+# Build frontend
+echo "🔨 Building frontend..."
+npm run build
+
+# Start application
+echo "🚀 Starting iTA-City application..."
+
+if [ "$NODE_ENV" = "production" ]; then
+    pm2 start ecosystem.config.js
