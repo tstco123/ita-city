@@ -1,0 +1,33 @@
+# Using Docker Compose
+docker-compose up -d
+
+# Or build manually
+docker build -t ita-city .
+docker run -p 3000:3000 ita-city
+
+
+ita-city/
+├── src/
+│   ├── frontend/           # React/Vue frontend
+│   │   ├── components/     # UI components
+│   │   ├── pages/         # Page components
+│   │   ├── utils/         # Utility functions
+│   │   └── styles/        # CSS/Styles
+│   ├── backend/           # Node.js/Express backend
+│   │   ├── controllers/   # Route controllers
+│   │   ├── models/        # Database models
+│   │   ├── routes/        # API routes
+│   │   └── middleware/    # Custom middleware
+│   ├── algorithms/        # iTA v2 algorithm implementation
+│   │   ├── ita-core.js    # Core iTA algorithm
+│   │   ├── unity.js       # Unity indicators
+│   │   ├── balance.js     # Balance indicators
+│   │   └── governance.js  # Governance indicators
+│   └── tests/            # Test suites
+├── data/                  # City data and samples
+│   ├── mashhad/          # Mashhad-specific data
+│   ├── iran-cities/      # All Iranian cities
+│   └── test-data/        # Test datasets
+├── docs/                  # Documentation
+├── public/               # Static files
+└── deployment/           # Deployment configurations
