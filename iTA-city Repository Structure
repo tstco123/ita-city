@@ -1,0 +1,25 @@
+# Create project structure
+mkdir ita-city
+cd ita-city
+
+# Initialize Git
+git init
+
+# Create directory structure
+mkdir -p src/{frontend,backend,algorithms,tests}
+mkdir -p docs/{api,deployment}
+mkdir -p data/{mashhad,iran-cities,test-data}
+mkdir -p public/{images,fonts,css,js}
+mkdir config
+mkdir deployment
+
+# Create essential files
+touch README.md
+touch README_FA.md
+touch README_AR.md
+touch LICENSE
+touch .gitignore
+touch package.json
+touch requirements.txt
+touch docker-compose.yml
+touch .env.example
